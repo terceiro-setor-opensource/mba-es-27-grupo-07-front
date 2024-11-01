@@ -1,0 +1,27 @@
+/* css mobile */
+/* .... */
+@import url("./colors.css");
+@import url("./buttons.css");
+
+html,
+body {
+  height: 100%;
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+body * {
+  box-sizing: border-box;
+}
+
+.cc-main-container {
+  padding: 1.25rem;
+}
+
+@media screen and (min-width: 900px) {
+  /* css desktop */
+  /* .... */
+}

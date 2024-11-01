@@ -1,0 +1,19 @@
+button.cc-primary-button,
+a.cc-primary-button {
+  background-color: var(--ccOrange) !important;
+  color: var(--ccWhite);
+  font-size: 1.25rem;
+  min-height: 3.75rem;
+  font-weight: 400;
+  width: 100%;
+}
+
+button.cc-secondary-button,
+a.cc-secondary-button {
+  background-color: var(--ccDarkBlue) !important;
+  color: var(--ccWhite);
+  font-size: 1.25rem;
+  min-height: 3.75rem;
+  font-weight: 400;
+  width: 100%;
+}
