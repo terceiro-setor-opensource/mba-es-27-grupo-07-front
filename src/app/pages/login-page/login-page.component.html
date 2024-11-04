@@ -1,6 +1,24 @@
 <main class="cc-main-container">
-  <h1>Login</h1>
-  <button class="cc-primary-button home-button" mat-flat-button routerLink="/">
-    Home
-  </button>
+  <section class="cc-login-section">
+    <article class="cc-logo-card">
+      <img src="/assets/img/logo.png" alt="Ícone globo" />
+    </article>
+  </section>
+
+  <section class="cc-login-section-input">
+    <input-field [inputValue]="login" [inputType]="'email'" [label]="'Login'" (inputValueChange)="login = $event">
+    </input-field>
+    <input-field input-field [inputValue]="password" [inputType]="'password'" [label]="'Senha'"
+      (inputValueChange)="password = $event">
+    </input-field>
+  </section>
+
+  <section class="cc-login-section-button">
+    <button class="cc-secondary-button acessar-button" mat-flat-button routerLink="/">
+      Acessar
+    </button>
+    <button class="cc-primary-button home-button" mat-flat-button routerLink="/">
+      Home
+    </button>
+  </section>
 </main>

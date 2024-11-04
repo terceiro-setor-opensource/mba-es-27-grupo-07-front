@@ -1,0 +1,27 @@
+/* src/app/pages/login-page/login-page.component.css */
+.cc-login-section {
+  display: flex;
+  justify-content: center; /* Centraliza horizontalmente */
+  align-items: center; /* Centraliza verticalmente */
+  height: 50vh; /* Define a altura do contêiner para 100% da altura da viewport */
+}
+
+.cc-login-section-button {
+  display: flex;
+  flex-direction: column;
+  gap: 0.9375rem;
+}
+
+.cc-login-section-input {
+  width: 100%; /* Faz o contêiner ocupar 100% da largura */
+  display: flex;
+  flex-direction: column; /* Alinha os inputs em coluna */
+  gap: 10px; /* Espaçamento entre os inputs */
+  align-items: center; /* Centraliza os inputs horizontalmente */
+  height: 30vh
+}
+
+.cc-login-section-input input {
+  width: 100%; /* Faz o input ocupar 100% da largura do contêiner */
+  box-sizing: border-box; /* Inclui padding e border na largura total */
+}
