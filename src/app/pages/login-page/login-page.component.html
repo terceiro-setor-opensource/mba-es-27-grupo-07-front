@@ -1,16 +1,22 @@
 <main class="cc-main-container">
   <section class="cc-login-section">
-    <article class="cc-logo-card">
-      <img src="/assets/img/logo.png" alt="Ícone globo" />
-    </article>
+    <img src="/assets/img/logo.png" alt="Ícone globo" />
   </section>
 
   <section class="cc-login-section-input">
-    <input-field [inputValue]="login" [inputType]="'email'" [label]="'Login'" (inputValueChange)="login = $event">
-    </input-field>
-    <input-field input-field [inputValue]="password" [inputType]="'password'" [label]="'Senha'"
-      (inputValueChange)="password = $event">
-    </input-field>
+    <form>
+      <mat-form-field appearance="outline" class="custom-input">
+        <mat-label>Login</mat-label>
+        <input matInput type="text" />
+        <!-- <mat-error>Email is <strong>required</strong></mat-error> -->
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="custom-input">
+        <mat-label>Senha</mat-label>
+        <input matInput type="password" />
+        <!-- <mat-error>Password is <strong>required</strong></mat-error> -->
+      </mat-form-field>
+    </form>
   </section>
 
   <section class="cc-login-section-button">
