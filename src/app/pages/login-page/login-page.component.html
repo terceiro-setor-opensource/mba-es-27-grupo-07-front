@@ -1,6 +1,30 @@
 <main class="cc-main-container">
-  <h1>Login</h1>
-  <button class="cc-primary-button home-button" mat-flat-button routerLink="/">
-    Home
-  </button>
+  <section class="cc-login-section">
+    <img class="cc-login-logo" src="/assets/img/logo.png" alt="Ícone globo" />
+  </section>
+
+  <section class="cc-login-section-input">
+    <form>
+      <mat-form-field appearance="outline" class="custom-input">
+        <mat-label>Login</mat-label>
+        <input matInput type="text" />
+        <!-- <mat-error>Email is <strong>required</strong></mat-error> -->
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="custom-input">
+        <mat-label>Senha</mat-label>
+        <input matInput type="password" />
+        <!-- <mat-error>Password is <strong>required</strong></mat-error> -->
+      </mat-form-field>
+    </form>
+  </section>
+
+  <section class="cc-login-section-button">
+    <button class="cc-secondary-button acessar-button" mat-flat-button routerLink="/">
+      Acessar
+    </button>
+    <button class="cc-basic-button esqueci-senha-button" mat-button routerLink="/">Esqueci minha senha</button>
+    <hr class="cc-line-divider">
+    <button class="cc-basic-button nao-tenho-conta" mat-button routerLink="/">Não tenho uma conta</button>
+  </section>
 </main>

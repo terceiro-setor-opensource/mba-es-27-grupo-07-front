@@ -1,0 +1,33 @@
+/* src/app/pages/login-page/login-page.component.css */
+.cc-login-section {
+  margin-bottom: 50px; /* Espaçamento abaixo da seção de logo */
+}
+
+.cc-login-section-button {
+}
+
+.cc-login-section-input {
+  margin-bottom: 80px;
+}
+
+.cc-login-logo {
+  display: flex;
+  height: 20rem;
+  max-width: 28.75rem;
+  margin: auto;
+}
+
+.acessar-button {
+  margin-bottom: 5px;
+}
+
+.cc-line-divider {
+  border: none;
+  border-top: 1px solid var(--ccOrange);
+  margin-top: 100px;
+  width: 100%;
+}
+
+
+
+
