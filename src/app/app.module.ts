@@ -11,15 +11,27 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
+import { MatIconModule } from '@angular/material/icon';
+import { HeaderComponent } from './components/header/header.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomePageComponent,
     LoginPageComponent,
-    NewAccountPageComponent
+    NewAccountPageComponent,
+    HeaderComponent
   ],
-  imports: [BrowserModule, AppRoutingModule, MatButtonModule, FormsModule, MatFormFieldModule, MatInputModule, ReactiveFormsModule],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    MatButtonModule,
+    FormsModule,
+    MatFormFieldModule,
+    MatInputModule,
+    ReactiveFormsModule,
+    MatIconModule
+  ],
   providers: [provideAnimationsAsync()],
   bootstrap: [AppComponent],
 })

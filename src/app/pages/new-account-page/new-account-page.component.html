@@ -1,6 +1,43 @@
 <main class="cc-main-container">
-  <h1>Nova conta</h1>
-  <button class="cc-primary-button home-button" mat-flat-button routerLink="/">
-    Home
+  <app-header title="Meu cadastro" [routerLink]="'/login'"></app-header>
+
+  <section class="cc-login-section-input">
+    <form>
+      <mat-form-field appearance="outline" class="custom-input">
+        <mat-label>Nome</mat-label>
+        <input matInput type="text" id="nome" required />
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="custom-input">
+        <mat-label>E-mail</mat-label>
+        <input matInput type="email" id="email" required />
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="custom-input">
+        <mat-label>Whatsapp</mat-label>
+        <input matInput type="text" id="whatsapp" required />
+      </mat-form-field>
+
+      <div class="bloco-apartamento">
+        <mat-form-field appearance="outline" class="custom-input">
+          <mat-label>Bloco</mat-label>
+          <input matInput type="text" id="bloco" required />
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="custom-input">
+          <mat-label>Apartamento</mat-label>
+          <input matInput type="text" id="apartamento" required />
+        </mat-form-field>
+      </div>
+
+      <mat-form-field appearance="outline" class="custom-input">
+        <mat-label>Senha</mat-label>
+        <input matInput type="password" id="senha" required />
+      </mat-form-field>
+    </form>
+  </section>
+
+  <button class="cc-secondary-button acessar-button" mat-flat-button routerLink="/">
+    Cadastrar
   </button>
 </main>
