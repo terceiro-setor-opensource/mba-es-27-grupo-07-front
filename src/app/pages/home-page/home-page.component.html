@@ -1,45 +1,53 @@
 <main class="cc-main-container">
-    <div class="header">
-        <h1>Home</h1>
-        <img src="/assets/img/logo_menor.png" alt="Logo_menor" class="logo">
-    </div>
-
-    <section class="cc-search-input">
-        <form>
-            <mat-form-field appearance="outline" class="custom-input">
-                <mat-label>busque...</mat-label>
-                <input matInput type="text" id="nome" />
-                <span matPrefix class="search-icon">🔍</span>
-            </mat-form-field>
-        </form>
-    </section>
-
-    <div class="product">
-        <img src="/assets/img/ps5.png" alt="PlayStation 5" class="product-image" [routerLink]="'/anuncios'">
-        <div class="product-info">
-            <h2 class="preco">R$ 2500 <span class="seller">Alexandre</span></h2>
-            <p>PlayStation 5 mídia física Usado - Console Sony com 825GB SSD 2 controles e 2 jogos</p>
-        </div>
-    </div>
-
-    <div class="separator"></div>
-
-    <div class="product">
-        <img src="/assets/img/notebook.png" alt="Notebook" class="product-image">
-        <div class="product-info">
-            <h2 class="preco">R$ 3400,00 <span class="seller">Romulo</span></h2>
-            <p>Notebook i5, SSD, 1TB não acompanha carregador, bateria viciada</p>
-        </div>
-    </div>
-
-    <div class="separator"></div>
-
-    <div class="product">
-        <img src="/assets/img/carrinho.png" alt="Carrinho de bebê" class="product-image">
-        <div class="product-info">
-            <h2 class="preco">R$ 180.00 <span class="seller">Jilvan Junior</span></h2>
-            <p>Carrinho de bebê usado, pouco tempo de uso (não acompanha o bebê)</p>
-        </div>
-    </div>
-    <app-menu></app-menu>
+  <img
+    class="cc-home-logo"
+    src="/assets/img/logo.png"
+    alt="Logo Condomínio Conectado"
+  />
+  <section class="cc-home-section">
+    <article class="cc-icon-card">
+      <img src="/assets/icons/public.svg" alt="Ícone globo" />
+      <h3>
+        <strong>Conecte-se com sua comunidade:</strong> Encontre e anuncie
+        produtos com facilidade, conectando-se diretamente com seus vizinhos.
+        Sem mais confusão em grupos de WhatsApp!
+      </h3>
+    </article>
+    <article class="cc-icon-card">
+      <img src="/assets/icons/edgesensor_low.svg" alt="Ícone celular" />
+      <h3>
+        <strong>Anúncios rápidos e fáceis:</strong> Publique seus produtos com
+        imagens e detalhes em minutos. Simples, prático e acessível a todos os
+        moradores do condomínio.
+      </h3>
+    </article>
+    <article class="cc-icon-card">
+      <img src="/assets/icons/water_lock.svg" alt="Ícone cadeado" />
+      <h3>
+        <strong>Acesso exclusivo para moradores:</strong> Navegue pelos anúncios
+        mais recentes e encontre o que precisa sem sair do condomínio. Segurança
+        e comodidade na palma da sua mão.
+      </h3>
+    </article>
+    <article class="cc-icon-card">
+      <img src="/assets/icons/move_location.svg" alt="Ícone localização" />
+      <h3>
+        <strong>Contatos diretos e seguros:</strong> Veja os detalhes dos
+        produtos e entre em contato direto com o anunciante. Tudo de forma
+        rápida, segura e organizada.
+      </h3>
+    </article>
+  </section>
+  <section class="cc-home-section-button">
+    <button class="cc-primary-button" mat-flat-button routerLink="/login">
+      Faça login
+    </button>
+    <button
+      class="cc-secondary-button"
+      mat-flat-button
+      routerLink="/nova-conta"
+    >
+      Crie sua conta
+    </button>
+  </section>
 </main>
