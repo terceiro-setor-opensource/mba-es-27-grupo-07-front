@@ -20,12 +20,21 @@ export class MenuComponent {
   }
 
   navigate(menu: string) {
-    const url = menu === 'home' ? '/home' : '/meu-perfil';
-    this.router.navigateByUrl(url); // Navega para a URL correta
+    const url = menu === 'home' ? '/home' : menu === 'anuncios' ? '/meus-anuncios' : '/meu-perfil';
+    this.router.navigateByUrl(url); 
   }
 
   private updateActiveMenu() {
     // Atualiza o menu ativo com base na rota atual
-    this.activeMenu = this.router.url === '/home' ? 'home' : 'perfil';
+    const currentUrl = this.router.url;
+
+
+    if (currentUrl === '/home' || currentUrl === '/anuncios') {
+      this.activeMenu = 'home';
+    } else if (currentUrl === '/meus-anuncios') {
+      this.activeMenu = 'anuncios';
+    } else {
+      this.activeMenu = 'perfil';
+    }
   }
 }
