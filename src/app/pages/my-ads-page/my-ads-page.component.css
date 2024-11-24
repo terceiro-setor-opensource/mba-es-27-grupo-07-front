@@ -1,0 +1,72 @@
+.meu-anuncio-container {
+    padding-bottom: 90px;
+    padding: 1.25rem;
+}
+
+.anuncio-card {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px; /* Espaçamento entre os cartões */
+}
+
+.anuncio-image {
+    width: 100px; /* Largura da imagem */
+    height: auto; /* Mantém a proporção */
+    border-radius: 6px; /* Bordas arredondadas na imagem */
+    object-fit: cover;
+}
+
+.anuncio-details {
+    flex-grow: 1; /* Faz o contêiner ocupar o espaço restante */
+    margin: 20px 0 10px 7px;
+
+}
+
+.anuncio-name {
+    font-size: 1em; /* Tamanho do nome do anúncio */
+    margin: 0;
+    font-weight: bold;
+    line-height: 1.1;
+}
+
+.anuncio-price {
+    font-size: 1em; /* Tamanho do preço */
+    font-weight: bold;
+    color: var(--ccOrange); /* Cor do preço */
+    margin: 0;
+}
+
+.anuncio-status {
+    display: inline-block;
+    padding: 0px 10px; /* Espaçamento interno */
+    border-radius: 15px; /* Bordas arredondadas */
+    font-size: 0.7em; /* Tamanho da fonte do status */
+}
+
+.anuncio-status.active {
+    background-color: #D3FFCF; /* Fundo verde para ativo */
+}
+
+.anuncio-status.inactive {
+    background-color: #FBC5C5; /* Fundo vermelho para inativo */
+}
+
+.edit-button {
+    background: none; /* Sem fundo */
+    border: none; /* Sem borda */
+    cursor: pointer; /* Cursor de ponteiro */
+    font-size: 1.2em; /* Tamanho do ícone de edição */
+    float: right;
+}
+
+.separator {
+    width: 100%;
+    margin: 0 auto;
+    border-bottom: 1px solid var(--ccOrange);
+    box-shadow: 0 0 10px var(--ccOrange);
+    margin-top: -10px;
+}
+
+.btn-novo-anuncio {
+    margin-top: 95%;
+}

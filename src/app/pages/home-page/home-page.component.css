@@ -1,43 +1,85 @@
-.cc-home-logo {
-  display: flex;
-  height: 15rem;
-  max-width: 23.75rem;
-  margin: auto;
+.cc-main-container {
+    padding: 1.25rem;
+    padding-bottom: 60px;
 }
 
-.cc-home-section {
-  display: flex;
-  flex-direction: column;
-  gap: 1.875rem;
-  margin-bottom: 1.875rem;
-  margin-top: 10px;
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
 }
 
-.cc-icon-card {
-  display: flex;
-  align-items: center;
-  gap: 0.4375rem;
+.back-button {
+    background: none;
+    border: 1px solid;
+    border-radius: 520%;
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 35px;
+    height: 35px;
+    cursor: pointer;
 }
 
-.cc-icon-card img {
-  width: 3rem;
-  height: 3rem;
-  object-fit: contain;
+.logo {
+    height: 30px;
+    margin-left: auto;
 }
 
-.cc-icon-card h3 {
-  font-size: 0.8125rem;
-  line-height: 1.125rem;
-  margin: 0;
+.cc-main-container h1 {
+    color: var(--ccOrange);
+    font-size: 20px;
+    font-weight: bold;
+    margin: 0;
+    margin-left: auto;
 }
 
-.cc-icon-card h3 strong {
-  font-weight: 600;
+.search-icon {
+    margin-left: 0.8rem;
 }
 
-.cc-home-section-button {
-  display: flex;
-  flex-direction: column;
-  gap: 0.9375rem;
-  margin-top: 100px;
+.product {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin: 20px 0;
+}
+
+.product-image {
+    width: 100%;
+    height: 190px;
+    object-fit: cover; /* Garante que a imagem preencha a área */
+    border-radius: 13px;
+    margin-bottom: 5px 0 0 0;
+}
+
+.preco {
+    color: var(--ccOrange);
+    font-size: 18px;
+    font-weight: bold;
+    margin: 0;
+    margin-left: 0.5rem;
+}
+
+.seller {
+    float: right;
+    color: var(--ccBlack);
+    font-size: 14px;
+    margin: 0;
+    margin-right: 0.5rem;
+}
+
+.product-info p {
+    margin: 0 0 0 0;
+}
+
+.separator {
+    width: 70%;
+    margin: 0 auto;
+    border-bottom: 1px solid var(--ccOrange);
+    box-shadow: 0 0 10px var(--ccOrange);
+    margin-top: -10px;
 }

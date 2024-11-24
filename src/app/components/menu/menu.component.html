@@ -1,0 +1,14 @@
+<footer class="footer">
+    <button class="menu-item" [ngClass]="{'active': activeMenu === 'home'}" (click)="navigate('home')">
+        <img [src]="activeMenu === 'home' ? '/assets/icons/home-orange.png' : '/assets/icons/home-white.png'" alt="Home Icon" class="icon">
+        <span class="label">Home</span>
+    </button>
+    <button class="menu-item">
+        <img src="/assets/icons/ads-white.png" alt="Anúncios" class="icon">
+        <span class="label">anúncios</span>
+    </button>
+    <button class="menu-item" [ngClass]="{'active': activeMenu === 'perfil'}" (click)="navigate('perfil')">
+        <img [src]="activeMenu === 'perfil' ? '/assets/icons/profile-orange.png' : '/assets/icons/profile-white.png'" alt="Perfil Icon" class="icon">
+        <span class="label">Perfil</span>
+    </button>
+</footer>
