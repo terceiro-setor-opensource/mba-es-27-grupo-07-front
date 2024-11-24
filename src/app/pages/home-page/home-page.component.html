@@ -15,10 +15,10 @@
     </section>
 
     <div class="product">
-        <img src="/assets/img/ps5.png" alt="PlayStation 5" class="product-image">
+        <img src="/assets/img/ps5.png" alt="PlayStation 5" class="product-image" [routerLink]="'/anuncios'">
         <div class="product-info">
             <h2 class="preco">R$ 2500 <span class="seller">Alexandre</span></h2>
-            <p>PlayStation 5 Usado - Console Sony com 825GB SSD</p>
+            <p>PlayStation 5 mídia física Usado - Console Sony com 825GB SSD 2 controles e 2 jogos</p>
         </div>
     </div>
 
@@ -41,19 +41,5 @@
             <p>Carrinho de bebê usado, pouco tempo de uso (não acompanha o bebê)</p>
         </div>
     </div>
-
-    <footer class="footer">
-        <button class="menu-item active">
-            <img src="/assets/icons/home-orange.png" alt="Home" class="icon">
-          <span class="label">home</span>
-        </button>
-        <button class="menu-item">
-            <img src="/assets/icons/ads-white.png" alt="Anúncios" class="icon">
-          <span class="label">anúncios</span>
-        </button>
-        <button class="menu-item">
-            <img src="/assets/icons/profile-white.png" alt="Perfil" class="icon">
-          <span class="label">perfil</span>
-        </button>
-      </footer>
+    <app-menu></app-menu>
 </main>
