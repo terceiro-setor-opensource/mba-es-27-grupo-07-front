@@ -29,13 +29,18 @@
           <input matInput type="text" id="apartamento" required />
         </mat-form-field>
       </div>
+
+      <mat-form-field appearance="outline" class="custom-input">
+        <mat-label>Senha</mat-label>
+        <input matInput type="password" />
+        <!-- <mat-error>Password is <strong>required</strong></mat-error> -->
+      </mat-form-field>
     </form>
   </section>
 
-  <button class="cc-secondary-button editar-perfil-button" mat-flat-button routerLink="/editar-meu-perfil">
-    Editar perfil
+  <button class="cc-secondary-button editar-perfil-button" mat-flat-button routerLink="/">
+    Salvar perfil
   </button>
 
-  <button class="cc-basic-button sair" mat-button routerLink="/login">Sair</button>
   <app-menu></app-menu>
 </main>

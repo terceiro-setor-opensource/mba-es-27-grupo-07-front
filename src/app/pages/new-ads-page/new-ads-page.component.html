@@ -1,0 +1,39 @@
+<main class="cc-main-container">
+  <app-header title="Novo Anúncio" [routerLink]="'/meus-anuncios'"></app-header>
+
+  <section class="cc-login-section-input">
+    <form>
+      <mat-form-field appearance="outline" class="custom-input">
+        <mat-label>Título do anúncio</mat-label>
+        <input matInput type="text" class="titulo-anuncio" required />
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="custom-input">
+        <mat-label>Descrição</mat-label>
+        <input matInput type="text" class="descricao" required />
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="custom-input">
+        <mat-label>Valor</mat-label>
+        <input matInput type="text" class="valor" required />
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="custom-input">
+        <mat-label>Status</mat-label>
+        <mat-select required>
+          <mat-option value="ativo">Ativo</mat-option>
+          <mat-option value="inativo">Inativo</mat-option>
+        </mat-select>
+      </mat-form-field>
+
+    </form>
+  </section>
+
+  <!-- Pendente criar o componente de upload de imagem/arquivo -->
+
+  <button class="cc-primary-button btn-criar-anuncio" mat-flat-button routerLink="/">
+    Criar anúncio
+  </button>
+
+  <app-menu></app-menu>
+</main>
