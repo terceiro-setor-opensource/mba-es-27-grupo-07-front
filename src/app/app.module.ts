@@ -21,6 +21,7 @@ import { MyAdsPageComponent } from './pages/my-ads-page/my-ads-page.component';
 import { NewAdsPageComponent } from './pages/new-ads-page/new-ads-page.component';
 import { MatOptionModule } from '@angular/material/core';
 import { MatSelectModule } from '@angular/material/select';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { EditMyProfilePageComponent } from './pages/edit-my-profile-page/edit-my-profile-page.component';
 
 @NgModule({
@@ -36,7 +37,7 @@ import { EditMyProfilePageComponent } from './pages/edit-my-profile-page/edit-my
     AdsPageComponent,
     MyAdsPageComponent,
     NewAdsPageComponent,
-    EditMyProfilePageComponent
+    EditMyProfilePageComponent,
   ],
   imports: [
     BrowserModule,
@@ -48,7 +49,8 @@ import { EditMyProfilePageComponent } from './pages/edit-my-profile-page/edit-my
     ReactiveFormsModule,
     MatIconModule,
     MatSelectModule,
-    MatOptionModule
+    MatOptionModule,
+    MatSnackBarModule,
   ],
   providers: [provideAnimationsAsync()],
   bootstrap: [AppComponent],

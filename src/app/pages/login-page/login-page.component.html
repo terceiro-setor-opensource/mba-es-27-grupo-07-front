@@ -4,28 +4,50 @@
   </section>
 
   <section class="cc-login-section-input">
-    <form>
+    <form [formGroup]="loginForm">
       <mat-form-field appearance="outline" class="custom-input">
         <mat-label>Login</mat-label>
-        <input matInput type="text" />
-        <!-- <mat-error>Email is <strong>required</strong></mat-error> -->
+        <input matInput type="text" formControlName="login" />
+        <mat-error>Campo obrigatório</mat-error>
       </mat-form-field>
 
       <mat-form-field appearance="outline" class="custom-input">
         <mat-label>Senha</mat-label>
-        <input matInput type="password" />
-        <!-- <mat-error>Password is <strong>required</strong></mat-error> -->
+        <input matInput type="password" formControlName="password" />
+        <mat-error *ngIf="loginForm.get('password')?.hasError('required')">
+          Campo obrigatório
+        </mat-error>
+        <mat-error *ngIf="loginForm.get('password')?.hasError('pattern')">
+          A senha deve ter pelo menos 8 caracteres, incluindo letras maiúsculas,
+          minúsculas e números
+        </mat-error>
       </mat-form-field>
     </form>
   </section>
 
   <section class="cc-login-section-button">
-    <button class="cc-secondary-button acessar-button" mat-flat-button [routerLink]="['/home']">
+    <button
+      class="cc-secondary-button acessar-button"
+      mat-flat-button
+      (click)="handleLogin()"
+    >
       Acessar
     </button>
     <!-- TODO → ajustar link quando criar tela esqueci senha -->
-    <button class="cc-basic-button esqueci-senha-button" mat-button routerLink="/">Esqueci minha senha</button>
-    <hr class="cc-line-divider">
-    <button class="cc-basic-button nao-tenho-conta" mat-button routerLink="/nova-conta">Não tenho uma conta</button>
+    <button
+      class="cc-basic-button esqueci-senha-button"
+      mat-button
+      routerLink="/"
+    >
+      Esqueci minha senha
+    </button>
+    <hr class="cc-line-divider" />
+    <button
+      class="cc-basic-button nao-tenho-conta"
+      mat-button
+      routerLink="/nova-conta"
+    >
+      Não tenho uma conta
+    </button>
   </section>
 </main>
