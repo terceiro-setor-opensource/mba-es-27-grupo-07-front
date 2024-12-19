@@ -1,5 +1,5 @@
 <main class="cc-main-container">
-  <app-header title="Meu cadastro" [routerLink]="'/login'"></app-header>
+  <app-header title="Meu cadastro" [link]="'/login'"></app-header>
 
   <section class="cc-login-section-input">
     <form>
@@ -37,7 +37,11 @@
     </form>
   </section>
 
-  <button class="cc-secondary-button acessar-button" mat-flat-button routerLink="/login">
+  <button
+    class="cc-secondary-button acessar-button"
+    mat-flat-button
+    routerLink="/login"
+  >
     Cadastrar
   </button>
 </main>

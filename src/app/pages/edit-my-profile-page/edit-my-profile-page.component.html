@@ -1,5 +1,5 @@
 <main class="cc-main-container">
-  <app-header title="Meu perfil" [routerLink]="'/home'"></app-header>
+  <app-header title="Meu perfil" [link]="'/home'"></app-header>
 
   <section class="cc-login-section-input">
     <form>
@@ -38,7 +38,11 @@
     </form>
   </section>
 
-  <button class="cc-secondary-button editar-perfil-button" mat-flat-button routerLink="/">
+  <button
+    class="cc-secondary-button editar-perfil-button"
+    mat-flat-button
+    routerLink="/"
+  >
     Salvar perfil
   </button>
 

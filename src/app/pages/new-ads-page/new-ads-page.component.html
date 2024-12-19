@@ -1,5 +1,5 @@
 <main class="cc-main-container">
-  <app-header title="Novo Anúncio" [routerLink]="'/meus-anuncios'"></app-header>
+  <app-header title="Novo Anúncio" [link]="'/meus-anuncios'"></app-header>
 
   <section class="cc-login-section-input">
     <form>
@@ -25,13 +25,16 @@
           <mat-option value="inativo">Inativo</mat-option>
         </mat-select>
       </mat-form-field>
-
     </form>
   </section>
 
   <!-- Pendente criar o componente de upload de imagem/arquivo -->
 
-  <button class="cc-primary-button btn-criar-anuncio" mat-flat-button routerLink="/">
+  <button
+    class="cc-primary-button btn-criar-anuncio"
+    mat-flat-button
+    routerLink="/"
+  >
     Criar anúncio
   </button>
 
