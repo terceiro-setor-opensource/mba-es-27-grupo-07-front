@@ -21,7 +21,7 @@ export class MenuComponent {
 
   navigate(menu: string) {
     const url = menu === 'home' ? '/home' : menu === 'anuncios' ? '/meus-anuncios' : '/meu-perfil';
-    this.router.navigateByUrl(url); 
+    this.router.navigateByUrl(url);
   }
 
   private updateActiveMenu() {
@@ -31,7 +31,7 @@ export class MenuComponent {
 
     if (currentUrl === '/home' || currentUrl === '/anuncios') {
       this.activeMenu = 'home';
-    } else if (currentUrl === '/meus-anuncios') {
+    } else if (currentUrl === '/meus-anuncios' || currentUrl === '/criar-novo-anuncio' || currentUrl === '/editar-anuncio') {
       this.activeMenu = 'anuncios';
     } else {
       this.activeMenu = 'perfil';

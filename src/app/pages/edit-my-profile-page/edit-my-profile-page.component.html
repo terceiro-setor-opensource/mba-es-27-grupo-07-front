@@ -1,5 +1,5 @@
 <main class="cc-main-container">
-  <app-header title="meu cadastro" [link]="'/login'"></app-header>
+  <app-header title="meu perfil" [link]="'/home'"></app-header>
 
   <section class="cc-login-section-input">
     <form>
@@ -32,12 +32,15 @@
 
       <mat-form-field appearance="outline" class="custom-input">
         <mat-label>senha</mat-label>
-        <input matInput type="password" id="senha" required />
+        <input matInput type="password" />
+        <!-- <mat-error>Password is <strong>required</strong></mat-error> -->
       </mat-form-field>
     </form>
   </section>
 
-  <button class="cc-secondary-button acessar-button" mat-flat-button routerLink="/login">
-    cadastrar
+  <button class="cc-secondary-button editar-perfil-button" mat-flat-button routerLink="/">
+    salvar perfil
   </button>
+
+  <app-menu></app-menu>
 </main>

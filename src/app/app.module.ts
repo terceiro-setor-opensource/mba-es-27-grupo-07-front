@@ -18,6 +18,13 @@ import { MyProfilePageComponent } from './pages/my-profile-page/my-profile-page.
 import { MenuComponent } from './components/menu/menu.component';
 import { AdsPageComponent } from './pages/ads-page/ads-page.component';
 import { MyAdsPageComponent } from './pages/my-ads-page/my-ads-page.component';
+import { NewAdsPageComponent } from './pages/new-ads-page/new-ads-page.component';
+import { MatOptionModule } from '@angular/material/core';
+import { MatSelectModule } from '@angular/material/select';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { EditMyProfilePageComponent } from './pages/edit-my-profile-page/edit-my-profile-page.component';
+import { EditAdsPageComponent } from './pages/edit-ads-page/edit-ads-page.component';
+import { ForgotPasswordPageComponent } from './pages/forgot-password-page/forgot-password-page.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +37,12 @@ import { MyAdsPageComponent } from './pages/my-ads-page/my-ads-page.component';
     MyProfilePageComponent,
     MenuComponent,
     AdsPageComponent,
-    MyAdsPageComponent
+    MyAdsPageComponent,
+    NewAdsPageComponent,
+    EditMyProfilePageComponent,
+    EditAdsPageComponent,
+    EditAdsPageComponent,
+    ForgotPasswordPageComponent,
   ],
   imports: [
     BrowserModule,
@@ -40,7 +52,10 @@ import { MyAdsPageComponent } from './pages/my-ads-page/my-ads-page.component';
     MatFormFieldModule,
     MatInputModule,
     ReactiveFormsModule,
-    MatIconModule
+    MatIconModule,
+    MatSelectModule,
+    MatOptionModule,
+    MatSnackBarModule,
   ],
   providers: [provideAnimationsAsync()],
   bootstrap: [AppComponent],

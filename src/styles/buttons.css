@@ -26,3 +26,15 @@ a.cc-basic-button {
   font-weight: 400;
   width: 100%;
 }
+
+button.cc-basic-red-button,
+a.cc-basic-red-button {
+  color: var(--ccRed) !important;
+  font-size: 1.00rem;
+  min-height: 0.75rem;
+  font-weight: 400;
+  width: 100%;
+}
+
+
+
