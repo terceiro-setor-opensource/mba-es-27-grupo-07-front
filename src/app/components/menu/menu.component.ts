@@ -31,7 +31,7 @@ export class MenuComponent {
 
     if (currentUrl === '/home' || currentUrl === '/anuncios') {
       this.activeMenu = 'home';
-    } else if (currentUrl === '/meus-anuncios' || currentUrl === '/criar-novo-anuncio') {
+    } else if (currentUrl === '/meus-anuncios' || currentUrl === '/criar-novo-anuncio' || currentUrl === '/editar-anuncio') {
       this.activeMenu = 'anuncios';
     } else {
       this.activeMenu = 'perfil';

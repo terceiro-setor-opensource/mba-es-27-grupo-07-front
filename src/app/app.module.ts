@@ -23,6 +23,8 @@ import { MatOptionModule } from '@angular/material/core';
 import { MatSelectModule } from '@angular/material/select';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { EditMyProfilePageComponent } from './pages/edit-my-profile-page/edit-my-profile-page.component';
+import { EditAdsPageComponent } from './pages/edit-ads-page/edit-ads-page.component';
+import { ForgotPasswordPageComponent } from './pages/forgot-password-page/forgot-password-page.component';
 
 @NgModule({
   declarations: [
@@ -38,6 +40,9 @@ import { EditMyProfilePageComponent } from './pages/edit-my-profile-page/edit-my
     MyAdsPageComponent,
     NewAdsPageComponent,
     EditMyProfilePageComponent,
+    EditAdsPageComponent,
+    EditAdsPageComponent,
+    ForgotPasswordPageComponent,
   ],
   imports: [
     BrowserModule,

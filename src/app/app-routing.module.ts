@@ -9,6 +9,8 @@ import { AdsPageComponent } from './pages/ads-page/ads-page.component';
 import { MyAdsPageComponent } from './pages/my-ads-page/my-ads-page.component';
 import { EditMyProfilePageComponent } from './pages/edit-my-profile-page/edit-my-profile-page.component';
 import { NewAdsPageComponent } from './pages/new-ads-page/new-ads-page.component';
+import { EditAdsPageComponent } from './pages/edit-ads-page/edit-ads-page.component';
+import { ForgotPasswordPageComponent } from './pages/forgot-password-page/forgot-password-page.component';
 
 const routes: Routes = [
   {
@@ -22,6 +24,10 @@ const routes: Routes = [
   {
     path: 'nova-conta',
     component: NewAccountPageComponent,
+  },
+  {
+    path: 'esqueci-senha',
+    component: ForgotPasswordPageComponent,
   },
   {
     path: 'home',
@@ -46,6 +52,10 @@ const routes: Routes = [
   {
     path: 'criar-novo-anuncio',
     component: NewAdsPageComponent,
+  },
+  {
+    path: 'editar-anuncio',
+    component: EditAdsPageComponent,
   },
 ];
 

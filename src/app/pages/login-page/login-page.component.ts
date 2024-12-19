@@ -19,10 +19,16 @@ export class LoginPageComponent {
     ]),
   });
 
+  isPasswordVisible: boolean = false;
+
   constructor(
     private snackBarService: SnackBarService,
     private router: Router
   ) {}
+
+  togglePasswordVisibility() {
+    this.isPasswordVisible = !this.isPasswordVisible;
+  }
 
   handleLogin() {
     const isValidForm = validateFormGroup(this.loginForm);

@@ -36,8 +36,17 @@
     margin-left: auto;
 }
 
+.custom-input {
+  position: relative; /* Para posicionar o ícone */
+}
+
 .search-icon {
-    margin-left: 0.8rem;
+  position: absolute; /* Posiciona o ícone em relação ao contêiner */
+  right: 10px; /* Ajuste a posição à direita */
+  top: 50%; /* Centraliza verticalmente */
+  transform: translateY(-50%); /* Ajusta para centralizar */
+  font-size: 1.5rem; /* Tamanho do ícone */
+  pointer-events: none; /* Ignora eventos de clique no ícone */
 }
 
 .product {
@@ -82,4 +91,8 @@
     border-bottom: 1px solid var(--ccOrange);
     box-shadow: 0 0 10px var(--ccOrange);
     margin-top: -10px;
+}
+
+.custom-input{
+    display: flex;
 }
