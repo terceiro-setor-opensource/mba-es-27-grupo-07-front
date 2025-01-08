@@ -2,28 +2,48 @@
   <app-header title="novo anúncio" [link]="'/meus-anuncios'"></app-header>
 
   <section class="cc-login-section-input">
-    <form>
+    <form [formGroup]="newAdsForm">
       <mat-form-field appearance="outline" class="custom-input">
         <mat-label>título do anúncio</mat-label>
-        <input matInput type="text" class="titulo-anuncio" required />
+        <input matInput type="text" formControlName="title" required />
+        <mat-error *ngIf="newAdsForm.get('title')?.invalid && newAdsForm.get('title')?.touched">
+          *Título é obrigatório.
+        </mat-error>
       </mat-form-field>
 
       <mat-form-field appearance="outline" class="custom-input">
         <mat-label>descrição</mat-label>
-        <textarea matInput class="descricao" required></textarea>
+        <textarea matInput formControlName="description" required></textarea>
+        <mat-error *ngIf="newAdsForm.get('description')?.invalid && newAdsForm.get('description')?.touched">
+          *Descrição é obrigatória.
+        </mat-error>
       </mat-form-field>
 
       <mat-form-field appearance="outline" class="custom-input">
         <mat-label>valor</mat-label>
-        <input matInput type="text" class="valor" required />
+        <input matInput type="number" formControlName="price" required />
+        <mat-error *ngIf="newAdsForm.get('price')?.invalid && newAdsForm.get('price')?.touched">
+          *Valor é obrigatório e deve ser maior ou igual a 0.
+        </mat-error>
       </mat-form-field>
 
       <mat-form-field appearance="outline" class="custom-input">
         <mat-label>status</mat-label>
-        <mat-select required>
+        <mat-select formControlName="status" required>
           <mat-option value="ativo">ativo</mat-option>
           <mat-option value="inativo">inativo</mat-option>
         </mat-select>
+        <mat-error *ngIf="newAdsForm.get('status')?.invalid && newAdsForm.get('status')?.touched">
+          *Status é obrigatório.
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="custom-input">
+        <mat-label>imagem</mat-label>
+        <input matInput type="text" formControlName="image" />
+        <!-- <mat-error *ngIf="newAdsForm.get('image')?.invalid && newAdsForm.get('image')?.touched">
+          *URL da imagem é obrigatória.
+        </mat-error> -->
       </mat-form-field>
     </form>
   </section>
@@ -31,7 +51,8 @@
   <!-- Pendente criar o componente de upload de imagem/arquivo -->
   <img src="/assets/img/notebook.png" alt="Notebook" class="product-image">
 
-  <button class="cc-primary-button btn-criar-anuncio" mat-flat-button routerLink="/meus-anuncios">
+  <button class="cc-primary-button btn-criar-anuncio" mat-flat-button (click)="handleNewAds()"
+    routerLink="/meus-anuncios">
     criar anúncio
   </button>
 

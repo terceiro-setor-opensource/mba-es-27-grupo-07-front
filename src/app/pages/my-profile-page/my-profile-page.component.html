@@ -2,37 +2,54 @@
   <app-header title="meu perfil" [link]="'/home'"></app-header>
 
   <section class="cc-login-section-input">
-    <form>
+    <form [formGroup]="myProfileForm">
       <mat-form-field appearance="outline" class="custom-input">
-        <mat-label>nome</mat-label>
-        <input matInput type="text" id="nome" required />
+        <mat-label>Nome</mat-label>
+        <input matInput type="text" formControlName="name" required />
+        <mat-error *ngIf="myProfileForm.get('name')?.invalid && myProfileForm.get('name')?.touched">
+          Nome é obrigatório.
+        </mat-error>
       </mat-form-field>
 
       <mat-form-field appearance="outline" class="custom-input">
-        <mat-label>e-mail</mat-label>
-        <input matInput type="email" id="email" required />
+        <mat-label>Email</mat-label>
+        <input matInput type="email" formControlName="email" required />
+        <mat-error *ngIf="myProfileForm.get('email')?.invalid && myProfileForm.get('email')?.touched">
+          Email é obrigatório e deve ser um email válido.
+        </mat-error>
       </mat-form-field>
 
       <mat-form-field appearance="outline" class="custom-input">
-        <mat-label>whatsapp</mat-label>
-        <input matInput type="text" id="whatsapp" required />
+        <mat-label>Telefone</mat-label>
+        <input matInput type="text" formControlName="phone" required />
+        <mat-error *ngIf="myProfileForm.get('phone')?.invalid && myProfileForm.get('phone')?.touched">
+          Telefone é obrigatório.
+        </mat-error>
       </mat-form-field>
 
-      <div class="bloco-apartamento">
+      <div formGroupName="address">
         <mat-form-field appearance="outline" class="custom-input">
-          <mat-label>bloco</mat-label>
-          <input matInput type="text" id="bloco" required />
+          <mat-label>Bloco</mat-label>
+          <input matInput type="text" formControlName="block" required />
+          <mat-error *ngIf="myProfileForm.get('address.block')?.invalid && myProfileForm.get('address.block')?.touched">
+            Bloco é obrigatório.
+          </mat-error>
         </mat-form-field>
 
         <mat-form-field appearance="outline" class="custom-input">
-          <mat-label>apartamento</mat-label>
-          <input matInput type="text" id="apartamento" required />
+          <mat-label>Apartamento</mat-label>
+          <input matInput type="text" formControlName="apartment" required />
+          <mat-error
+            *ngIf="myProfileForm.get('address.apartment')?.invalid && myProfileForm.get('address.apartment')?.touched">
+            Apartamento é obrigatório.
+          </mat-error>
         </mat-form-field>
       </div>
     </form>
   </section>
 
-  <button class="cc-secondary-button editar-perfil-button" mat-flat-button routerLink="/editar-meu-perfil">
+  <button class="cc-secondary-button editar-perfil-button" mat-flat-button routerLink="/editar-meu-perfil"
+    (click)="handleMyProfile()">
     editar perfil
   </button>
 
