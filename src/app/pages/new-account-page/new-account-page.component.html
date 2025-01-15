@@ -2,42 +2,71 @@
   <app-header title="meu cadastro" [link]="'/login'"></app-header>
 
   <section class="cc-login-section-input">
-    <form>
+    <form [formGroup]="newAccountForm">
       <mat-form-field appearance="outline" class="custom-input">
-        <mat-label>nome</mat-label>
-        <input matInput type="text" id="nome" required />
+        <mat-label>Nome</mat-label>
+        <input matInput type="text" formControlName="name" id="nome" required />
+        <mat-error *ngIf="newAccountForm.get('name')?.invalid && newAccountForm.get('name')?.touched">
+          Nome é obrigatório.
+        </mat-error>
       </mat-form-field>
 
       <mat-form-field appearance="outline" class="custom-input">
-        <mat-label>e-mail</mat-label>
-        <input matInput type="email" id="email" required />
+        <mat-label>Email</mat-label>
+        <input matInput type="email" formControlName="email" id="email" required />
+        <mat-error *ngIf="newAccountForm.get('email')?.invalid && newAccountForm.get('email')?.touched">
+          Email é obrigatório e deve ser um email válido.
+        </mat-error>
       </mat-form-field>
 
       <mat-form-field appearance="outline" class="custom-input">
-        <mat-label>whatsapp</mat-label>
-        <input matInput type="text" id="whatsapp" required />
+        <mat-label>Whatsapp</mat-label>
+        <input matInput type="text" formControlName="phone" id="whatsapp" required />
+        <mat-error *ngIf="newAccountForm.get('phone')?.invalid && newAccountForm.get('phone')?.touched">
+          Whatsapp é obrigatório.
+        </mat-error>
       </mat-form-field>
 
-      <div class="bloco-apartamento">
+      <div class="bloco-apartamento" formGroupName="address">
         <mat-form-field appearance="outline" class="custom-input">
-          <mat-label>bloco</mat-label>
-          <input matInput type="text" id="bloco" required />
+          <mat-label>Bloco</mat-label>
+          <input matInput type="text" formControlName="block" id="bloco" required />
+          <mat-error
+            *ngIf="newAccountForm.get('address.block')?.invalid && newAccountForm.get('address.block')?.touched">
+            Bloco é obrigatório.
+          </mat-error>
         </mat-form-field>
 
         <mat-form-field appearance="outline" class="custom-input">
-          <mat-label>apartamento</mat-label>
-          <input matInput type="text" id="apartamento" required />
+          <mat-label>Apartamento</mat-label>
+          <input matInput type="text" formControlName="apartment" id="apartamento" required />
+          <mat-error
+            *ngIf="newAccountForm.get('address.apartment')?.invalid && newAccountForm.get('address.apartment')?.touched">
+            Apartamento é obrigatório.
+          </mat-error>
         </mat-form-field>
       </div>
 
       <mat-form-field appearance="outline" class="custom-input">
-        <mat-label>senha</mat-label>
-        <input matInput type="password" id="senha" required />
+        <mat-label>Senha</mat-label>
+        <input matInput [type]="isPasswordVisible ? 'text' : 'password'" formControlName="password" id="senha"
+          required />
+        <span class="material-symbols-outlined password-icon" (click)="togglePasswordVisibility()"
+          style="cursor: pointer;">
+          {{ isPasswordVisible ? 'visibility_off' : 'visibility' }}
+        </span>
+        <mat-error *ngIf="newAccountForm.get('password')?.hasError('required')">
+          Senha é obrigatório.
+        </mat-error>
+        <mat-error *ngIf="newAccountForm.get('password')?.hasError('pattern')">
+          A senha deve ter pelo menos 8 caracteres, incluindo letras maiúsculas,
+          minúsculas e números.
+        </mat-error>
       </mat-form-field>
     </form>
   </section>
 
-  <button class="cc-secondary-button acessar-button" mat-flat-button routerLink="/login">
+  <button class="cc-secondary-button acessar-button" mat-flat-button (click)="handleNewAccount()">
     cadastrar
   </button>
 </main>
