@@ -32,11 +32,15 @@
     </form>
   </section>
 
-  <button class="cc-secondary-button editar-perfil-button" mat-flat-button routerLink="/editar-meu-perfil">
+  <button
+    class="cc-secondary-button editar-perfil-button"
+    mat-flat-button
+    routerLink="/editar-meu-perfil"
+  >
     editar perfil
   </button>
 
-  <button class="cc-basic-button sair" mat-button routerLink="/login">
+  <button class="cc-basic-button sair" mat-button (click)="handleLogout()">
     sair
   </button>
   <app-menu></app-menu>
