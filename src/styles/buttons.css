@@ -21,7 +21,7 @@ a.cc-secondary-button {
 button.cc-basic-button,
 a.cc-basic-button {
   color: var(--ccOrange) !important;
-  font-size: 1.00rem;
+  font-size: 1rem;
   min-height: 0.75rem;
   font-weight: 400;
   width: 100%;
@@ -30,11 +30,16 @@ a.cc-basic-button {
 button.cc-basic-red-button,
 a.cc-basic-red-button {
   color: var(--ccRed) !important;
-  font-size: 1.00rem;
+  font-size: 1rem;
   min-height: 0.75rem;
   font-weight: 400;
   width: 100%;
 }
 
-
-
+button.cc-secondary-button:disabled,
+button.cc-primary-button:disabled {
+  background-color: var(--ccSilver) !important;
+  color: var(--ccDarkSilver);
+  cursor: not-allowed;
+  opacity: 0.6;
+}

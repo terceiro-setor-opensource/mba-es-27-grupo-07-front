@@ -18,32 +18,53 @@
 
       <mat-form-field appearance="outline" class="custom-input">
         <mat-label>senha</mat-label>
-        <input matInput [type]="isPasswordVisible ? 'text' : 'password'" formControlName="password" />
-        <span class="material-symbols-outlined password-icon" (click)="togglePasswordVisibility()"
-          style="cursor: pointer;">
-          {{ isPasswordVisible ? 'visibility_off' : 'visibility' }}
+        <input
+          matInput
+          [type]="isPasswordVisible ? 'text' : 'password'"
+          formControlName="password"
+        />
+        <span
+          class="material-symbols-outlined password-icon"
+          (click)="togglePasswordVisibility()"
+          style="cursor: pointer"
+        >
+          {{ isPasswordVisible ? "visibility_off" : "visibility" }}
         </span>
         <mat-error *ngIf="loginForm.get('password')?.hasError('required')">
-          *campo obrigatório
+          * campo obrigatório
         </mat-error>
-        <mat-error *ngIf="loginForm.get('password')?.hasError('pattern')">
-          *a senha deve ter pelo menos 8 caracteres, incluindo letras maiúsculas,
-          minúsculas e números
+        <mat-error
+          *ngIf="loginForm.get('password')?.hasError('invalidCredential')"
+        >
+          * credenciais inválidas. Por favor, verifique seu email e senha.
         </mat-error>
       </mat-form-field>
     </form>
   </section>
 
   <section class="cc-login-section-button">
-    <button class="cc-secondary-button acessar-button" mat-flat-button (click)="handleLogin()">
+    <button
+      [disabled]="isLoading"
+      class="cc-secondary-button acessar-button"
+      mat-flat-button
+      (click)="handleLogin()"
+    >
       acessar
     </button>
     <!-- TODO → ajustar link quando criar tela esqueci senha -->
-    <button class="cc-basic-button esqueci-senha-button" mat-button routerLink="/esqueci-senha">
+    <button
+      class="cc-basic-button esqueci-senha-button"
+      mat-button
+      routerLink="/esqueci-senha"
+    >
       esqueci a senha
     </button>
     <hr class="cc-line-divider" />
-    <button class="cc-basic-button nao-tenho-conta" mat-button routerLink="/nova-conta">
+    <button
+      class="cc-basic-button nao-tenho-conta"
+      mat-button
+      routerLink="/nova-conta"
+    >
       não tenho uma conta
     </button>
   </section>

@@ -1,4 +1,10 @@
 export interface ILogin {
-  login: string;
+  email: string;
   password: string;
+}
+
+export interface ILoginCredentials {
+  uid: string;
+  token: string;
+  email: string;
 }

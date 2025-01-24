@@ -12,6 +12,17 @@ import { MatInputModule } from '@angular/material/input';
 import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatIconModule } from '@angular/material/icon';
+import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
+import { getFunctions, provideFunctions } from '@angular/fire/functions';
+import { environment } from 'src/environments/environment';
+import {
+  provideHttpClient,
+  withInterceptorsFromDi,
+} from '@angular/common/http';
+import { AngularFireModule } from '@angular/fire/compat';
+import { AngularFireAuthModule } from '@angular/fire/compat/auth';
+import { NgxMaskDirective, provideNgxMask } from 'ngx-mask';
+
 import { HeaderComponent } from './components/header/header.component';
 import { HomePageComponent } from './pages/home-page/home-page.component';
 import { MyProfilePageComponent } from './pages/my-profile-page/my-profile-page.component';
@@ -56,8 +67,17 @@ import { ForgotPasswordPageComponent } from './pages/forgot-password-page/forgot
     MatSelectModule,
     MatOptionModule,
     MatSnackBarModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFireAuthModule,
+    NgxMaskDirective,
   ],
-  providers: [provideAnimationsAsync()],
+  providers: [
+    provideAnimationsAsync(),
+    provideFirebaseApp(() => initializeApp(environment.firebase)), // Inicializa o Firebase
+    provideFunctions(() => getFunctions()), // Disponibiliza as funções,
+    provideHttpClient(withInterceptorsFromDi()),
+    provideNgxMask(),
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

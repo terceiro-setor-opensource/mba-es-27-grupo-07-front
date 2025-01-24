@@ -11,6 +11,7 @@ import { EditMyProfilePageComponent } from './pages/edit-my-profile-page/edit-my
 import { NewAdsPageComponent } from './pages/new-ads-page/new-ads-page.component';
 import { EditAdsPageComponent } from './pages/edit-ads-page/edit-ads-page.component';
 import { ForgotPasswordPageComponent } from './pages/forgot-password-page/forgot-password-page.component';
+import { AuthGuardService } from './services/auth-guard.service';
 
 const routes: Routes = [
   {
@@ -32,31 +33,39 @@ const routes: Routes = [
   {
     path: 'home',
     component: HomePageComponent,
+    canActivate: [AuthGuardService],
   },
   {
     path: 'meu-perfil',
     component: MyProfilePageComponent,
+    canActivate: [AuthGuardService],
   },
   {
     path: 'editar-meu-perfil',
     component: EditMyProfilePageComponent,
+    canActivate: [AuthGuardService],
   },
   {
     path: 'anuncios',
     component: AdsPageComponent,
+    canActivate: [AuthGuardService],
   },
   {
     path: 'meus-anuncios',
     component: MyAdsPageComponent,
+    canActivate: [AuthGuardService],
   },
   {
     path: 'criar-novo-anuncio',
     component: NewAdsPageComponent,
+    canActivate: [AuthGuardService],
   },
   {
     path: 'editar-anuncio',
     component: EditAdsPageComponent,
+    canActivate: [AuthGuardService],
   },
+  { path: '**', redirectTo: '' },
 ];
 
 @NgModule({
