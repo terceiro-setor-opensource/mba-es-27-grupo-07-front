@@ -12,6 +12,8 @@ import { MatInputModule } from '@angular/material/input';
 import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatIconModule } from '@angular/material/icon';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { getStorage, provideStorage } from '@angular/fire/storage';
 import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
 import { getFunctions, provideFunctions } from '@angular/fire/functions';
 import { environment } from 'src/environments/environment';
@@ -25,16 +27,16 @@ import { NgxMaskDirective, provideNgxMask } from 'ngx-mask';
 
 import { HeaderComponent } from './components/header/header.component';
 import { HomePageComponent } from './pages/home-page/home-page.component';
+import { UploadInputField } from './components/upload-input-field/upload-input-field.component';
 import { MyProfilePageComponent } from './pages/my-profile-page/my-profile-page.component';
 import { MenuComponent } from './components/menu/menu.component';
 import { AdsPageComponent } from './pages/ads-page/ads-page.component';
 import { MyAdsPageComponent } from './pages/my-ads-page/my-ads-page.component';
-import { NewAdsPageComponent } from './pages/new-ads-page/new-ads-page.component';
 import { MatOptionModule } from '@angular/material/core';
 import { MatSelectModule } from '@angular/material/select';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { EditMyProfilePageComponent } from './pages/edit-my-profile-page/edit-my-profile-page.component';
-import { EditAdsPageComponent } from './pages/edit-ads-page/edit-ads-page.component';
+import { MyAdsDetailsPageComponent } from './pages/my-ads-details-page/my-ads-details-page.component';
 import { ForgotPasswordPageComponent } from './pages/forgot-password-page/forgot-password-page.component';
 
 @NgModule({
@@ -49,10 +51,8 @@ import { ForgotPasswordPageComponent } from './pages/forgot-password-page/forgot
     MenuComponent,
     AdsPageComponent,
     MyAdsPageComponent,
-    NewAdsPageComponent,
     EditMyProfilePageComponent,
-    EditAdsPageComponent,
-    EditAdsPageComponent,
+    MyAdsDetailsPageComponent,
     ForgotPasswordPageComponent,
   ],
   imports: [
@@ -60,6 +60,7 @@ import { ForgotPasswordPageComponent } from './pages/forgot-password-page/forgot
     AppRoutingModule,
     MatButtonModule,
     FormsModule,
+    UploadInputField,
     MatFormFieldModule,
     MatInputModule,
     ReactiveFormsModule,
@@ -69,12 +70,14 @@ import { ForgotPasswordPageComponent } from './pages/forgot-password-page/forgot
     MatSnackBarModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireAuthModule,
+    MatProgressSpinnerModule,
     NgxMaskDirective,
   ],
   providers: [
     provideAnimationsAsync(),
     provideFirebaseApp(() => initializeApp(environment.firebase)), // Inicializa o Firebase
     provideFunctions(() => getFunctions()), // Disponibiliza as funções,
+    provideStorage(() => getStorage()), // Disponibiliza o storage
     provideHttpClient(withInterceptorsFromDi()),
     provideNgxMask(),
   ],

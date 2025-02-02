@@ -8,8 +8,7 @@ import { MyProfilePageComponent } from './pages/my-profile-page/my-profile-page.
 import { AdsPageComponent } from './pages/ads-page/ads-page.component';
 import { MyAdsPageComponent } from './pages/my-ads-page/my-ads-page.component';
 import { EditMyProfilePageComponent } from './pages/edit-my-profile-page/edit-my-profile-page.component';
-import { NewAdsPageComponent } from './pages/new-ads-page/new-ads-page.component';
-import { EditAdsPageComponent } from './pages/edit-ads-page/edit-ads-page.component';
+import { MyAdsDetailsPageComponent } from './pages/my-ads-details-page/my-ads-details-page.component';
 import { ForgotPasswordPageComponent } from './pages/forgot-password-page/forgot-password-page.component';
 import { AuthGuardService } from './services/auth-guard.service';
 
@@ -56,13 +55,8 @@ const routes: Routes = [
     canActivate: [AuthGuardService],
   },
   {
-    path: 'criar-novo-anuncio',
-    component: NewAdsPageComponent,
-    canActivate: [AuthGuardService],
-  },
-  {
-    path: 'editar-anuncio',
-    component: EditAdsPageComponent,
+    path: 'meus-anuncios/:param',
+    component: MyAdsDetailsPageComponent,
     canActivate: [AuthGuardService],
   },
   { path: '**', redirectTo: '' },

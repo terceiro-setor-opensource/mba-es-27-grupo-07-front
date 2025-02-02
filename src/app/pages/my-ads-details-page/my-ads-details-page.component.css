@@ -19,6 +19,14 @@
   flex: 1;
 }
 
+.cc-mat-icon-cost {
+  margin-right: 0.625rem;
+}
+
+mat-spinner.cc-spinner {
+  margin-top: 1.25rem;
+}
+
 .product-image {
   width: 100%;
   height: 190px;
@@ -44,4 +52,10 @@
   margin-top: 1.5rem;
 }
 
+.cc-form-upload-file-field-container {
+  margin-bottom: 1.25rem;
+}
 
+.btn-criar-anuncio {
+  margin-top: 1.25rem;
+}

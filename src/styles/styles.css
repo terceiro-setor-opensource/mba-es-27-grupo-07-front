@@ -32,6 +32,25 @@ app-root {
   margin: auto;
 }
 
+mat-spinner {
+  display: flex;
+  margin: auto;
+}
+
+mat-spinner.cc-spinner {
+  margin-top: 0.625rem;
+  margin-bottom: 0.625rem;
+  height: 4.375rem !important;
+  width: 4.375rem !important;
+}
+
+mat-spinner.cc-spinner-small {
+  margin-top: 0.625rem;
+  margin-bottom: 0.625rem;
+  height: 1.875rem !important;
+  width: 1.875rem !important;
+}
+
 @media screen and (min-width: 900px) {
   /* css desktop */
   /* .... */
